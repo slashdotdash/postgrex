@@ -4,7 +4,13 @@ defmodule NotificationTest do
   alias Postgrex, as: P
   alias Postgrex.Notifications, as: PN
 
-  @opts [database: "postgrex_test", sync_connect: true]
+  @opts [
+      username: "postgrex@postgrex",
+      password: "",
+      database: "postgrex_test",
+      hostname: "postgrex.postgres.database.azure.com",
+      sync_connect: true
+    ]
 
   setup do
     {:ok, pid} = P.start_link(@opts)
